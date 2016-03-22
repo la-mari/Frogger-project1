@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+	<script src="p5.js">
+
+	</script>
+	<script src="sketch.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+	var xPosition = 0; //car1 starting xpos
+	var xPositionTwo = -50; //car2 starting xpos
+	var xPositionThree = 450;
+	var xPositionFour = 400;
+	
+	//setup
+	function setup() {
+		createCanvas(400, 400);
+		};
+
+
+//constructor function
+		var Frog = function(xPosFrog, yPosFrog, width, height){
+			this.xPosFrog = xPosFrog;
+			this.yPosFrog = yPosFrog;
+			this.width = width;
+			this.height = height;
+		};
+		
+		
+		//new frog assigned to froggy with ellipse arguments
+		var froggy = new Frog('200', '350', '20', '20');
+
+
+	//draw
+	function draw() {
+		//background here bc draw function continually executes code until stopped. need background redrawn each time car is redrawn
+		background(82, 222, 240);
+		fill(250, 150, 0) //car fill
+		rect(xPosition, 300, 50, 35); //car1
+		// rect(xPositionTwo, 200, 50, 35); //car2
+		// rect(xPositionThree, 250, 50, 35);
+		// rect(xPositionFour, 100, 50, 35);
+		xPosition += 3;
+		xPositionTwo += 2;
+		xPositionThree -= 1.5;
+		xPositionFour -= 2;
+		fill(0, 150, 0);
+		// ellipse (width/2, height, 20, 20);//frog at x =200, y=400
+
+
+
+
+		//this method is used to create frog-ellipse with given parameters
+		Frog.prototype.createFrog = function() {
+			ellipse(this.xPosFrog, this.yPosFrog, this.width, this.height);
+		};
+
+		
+		//call the function to make froggy
+		froggy.createFrog();
+		};
+
+
+
+		function keyPressed(){
+			if (keyCode === UP_ARROW){
+				console.log("key pressed");
+				froggy.yPosFrog -= 10;
+			}
+			if (keyCode === DOWN_ARROW){
+				froggy.yPosFrog += 10;
+			}
+			if (keyCode === LEFT_ARROW){
+				froggy.xPosFrog -= 10;
+			}
+			if (keyCode === RIGHT_ARROW){
+				froggy.xPosFrog += 10;
+			}
+		}
+
+		
+		// var checkCollision = function(){
+		// 	if ((froggy.xPosFrog + 10)-(xPosition + 25) < (10+25)){
+		// 	console.log("collision!");
+		// 	};
+		// };
+		// checkCollision();
+
+
+	
+</script>
+</body>
+</html>
