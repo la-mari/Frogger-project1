@@ -56,22 +56,30 @@
 		// 	noLoop();
 		// };
 
-		if((Math.abs((froggy.x + froggy.width/2) - (carOne.x + carOne.width/2))<(froggy.width/2 + carOne.width/2)) && (Math.abs((froggy.y + froggy.height/2) - (carOne.y + carOne.height/2))<(froggy.height/2 + carOne.height/2))){
-			console.log('collision equation works');
+		if((Math.abs((froggy.x + froggy.width/2) - (car1.x + car1.width/2))<(froggy.width/2 + car1.width/2)) && (Math.abs((froggy.y + froggy.height/2) - (car1.y + car1.height/2))<(froggy.height/2 + car1.height/2))){
+			// console.log('collision equation works');
 			noLoop();
 		};
 
 	};
 
 	
-	// if(((froggy.x + froggy.width/2) - (carOne.x + carOne.width/2))<(froggy.width/2 + carOne.width/2)){
-	// 	console.log('collision equation works');
-	// };
 
 
+	//Lane One
+	var car1 = new Car(0, 250, 50, 35, 1.1);
+	var car2 = new Car (-133,250, 50, 35, 1.1);
+	var car3 = new Car (-267, 250, 50, 35, 1.1);
 
-	var carOne = new Car(0, 300, 50, 35, 3);
-	var carTwo = new Car(0, 250, 50, 35, 2);
+	//Lane Two
+	var car4 = new Car(50, 190, 50, 35, 0.75);
+	var car5 = new Car(-150, 190, 50, 35, 0.75);
+
+	//Land Three
+	var car6 = new Car(0, 130, 50, 35, 1.0);
+	var car7 = new Car(-170, 130, 65, 35, 1.0);
+	var car8 = new Car(-300, 130, 40, 35, 1.0);
+
 
 
 	//draw
@@ -85,10 +93,16 @@
 		// rect(400, 100, 50, 35);
 
 
-		carOne.display(); //call display function to show carcar
-		carTwo.display(); //display carTwo
+		car1.display(); //call display function to show carOne
+		car2.display();
+		car3.display();
+		car4.display(); //display carTwo
+		car5.display();
+		car6.display();
+		car7.display();
+		car8.display();
 		froggy.display(); //call display to show froggy
-		carOne.collide(); 
+		car1.collide(); 
 		
 
 		// if (){ //if carOne collide with frog
@@ -101,18 +115,18 @@
 		function keyPressed(){
 			if (keyCode === UP_ARROW){
 				// console.log("key pressed");
-				froggy.y -= 10;
+				froggy.y -= 20;
 			}
 			if (keyCode === DOWN_ARROW){
-				froggy.y += 10;
+				froggy.y += 20;
 			}
 			if (keyCode === LEFT_ARROW){
-				froggy.x -= 10;
+				froggy.x -= 20;
 			}
 			if (keyCode === RIGHT_ARROW){
-				froggy.x += 10;
+				froggy.x += 20;
 			}
-		}
+		};
 
 		
 		// var checkCollision = function(){
