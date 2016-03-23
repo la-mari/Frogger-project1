@@ -20,7 +20,7 @@
 	};
 	
 	//new frog assigned to froggy with ellipse arguments
-	var froggy = new Frog(200, 388, 25, 20);
+	var froggy = new Frog(200, 360, 25, 20);
 
 	// constructor function for cars
 	var Car = function(x, y, width, height, speed){
@@ -49,7 +49,7 @@
 	// };
 
 
-	//Collision Detections
+	//Lose Scenario
 	Car.prototype.collide = function(){
 		// if (this.x === froggy.x){
 		// 	console.log('collision');
@@ -62,7 +62,13 @@
 	};
 
 	//Win scenario
-	// if (froggy.x >= )
+	var wins = function(){
+		if (froggy.y <= 50){
+		console.log('You Win, Froggy Lives!');
+		noLoop();
+		alert('You Win!');
+		};
+	};
 
 	
 
@@ -94,12 +100,8 @@
 		background(82, 222, 240);
 	
 		
-		// rect(-50, 200, 50, 35); //car2
-		// rect(50, 250, 50, 35);
-		// rect(400, 100, 50, 35);
-
-
-		car1.display(); //call display function to show each car
+		//call display function to show each car
+		car1.display(); 
 		car2.display();
 		car3.display();
 		car4.display(); 
@@ -109,9 +111,13 @@
 		car8.display();
 		car9.display();
 		car10.display();
-		froggy.display(); //call display to show froggy
-		car1.collide(); //call collisiond detection bt froggy and car1
-		
+
+		//call display to show froggy
+		froggy.display(); 
+		//call collision detection bt froggy and car1
+		car1.collide(); 
+		//call wins to log when froggy lives
+		wins();
 
 		// if (){ //if carOne collide with frog
 		// 	console.log('dead frog!')
@@ -120,21 +126,21 @@
 	};
 
 
-		function keyPressed(){
-			if (keyCode === UP_ARROW){
-				// console.log("key pressed");
-				froggy.y -= 20;
-			}
-			if (keyCode === DOWN_ARROW){
-				froggy.y += 20;
-			}
-			if (keyCode === LEFT_ARROW){
-				froggy.x -= 20;
-			}
-			if (keyCode === RIGHT_ARROW){
-				froggy.x += 20;
-			}
-		};
+	function keyPressed(){
+		if (keyCode === UP_ARROW){
+			// console.log("key pressed");
+			froggy.y -= 20;
+		}
+		if (keyCode === DOWN_ARROW){
+			froggy.y += 20;
+		}
+		if (keyCode === LEFT_ARROW){
+			froggy.x -= 20;
+		}
+		if (keyCode === RIGHT_ARROW){
+			froggy.x += 20;
+		}
+	};
 
 		
 		// var checkCollision = function(){
