@@ -1,7 +1,11 @@
-	
+
 	//setup
+	var canvasX = 400;
+	var canvasY = 400;
+
 	function setup() {
-		createCanvas(400, 400);
+		createCanvas(canvasX, canvasY);
+		rectMode(CENTER);
 	};
 
 
@@ -16,7 +20,7 @@
 	//this method is used to create frog-ellipse with given parameters
 	Frog.prototype.display = function() {
 		fill(0, 150, 0);
-		ellipse(this.x, this.y, this.width, this.height);
+		rect(this.x, this.y, this.width, this.height);
 	};
 	
 	//new frog assigned to froggy with ellipse arguments
@@ -34,95 +38,62 @@
 	Car.prototype.display = function(){
 		fill(250, 150, 0) //car's color
 		rect(this.x, this.y, this.width, this.height);
-		if (this.x > 400){
+		if (this.x > canvasX){
 			// console.log('se paso!');
-			this.x = 0;
+			this.x = -this.width;
 		} else {
 			this.x += this.speed;
 		};
 	};
 
-	// Car.prototype.collide = function(theFrog){ //other will be froggy
-	// 	if (this.x === theFrog.x){ //when x coordinates are equal, they have collided
-	// 		console.log('collision');
-	// 	};
-	// };
-
-
 	//Lose Scenario
 	Car.prototype.collide = function(){
-		// if (this.x === froggy.x){
-		// 	console.log('collision');
-		// 	noLoop();
-		// };
-		if((Math.abs((froggy.x + froggy.width/2) - (car1.x + car1.width/2))<(froggy.width/2 + car1.width/2)) && (Math.abs((froggy.y + froggy.height/2) - (car1.y + car1.height/2))<(froggy.height/2 + car1.height/2))){
-			// console.log('collision equation works');
+		if((Math.abs(froggy.x - this.x)<(froggy.width/2 + this.width/2)) && (Math.abs(froggy.y - this.y)<(froggy.height/2 + this.height/2))){
+			console.log('collision equation works');
+			alert('You lost!');
 			noLoop();
 		};
 	};
 
 	//Win scenario
 	var wins = function(){
-		if (froggy.y <= 50){
+		if (froggy.y <= 0){
 		console.log('You Win, Froggy Lives!');
 		noLoop();
 		alert('You Win!');
 		};
 	};
 
+	var cars = [];
 	
-
-
-	//Lane One
-	var car1 = new Car(0, 240, 50, 35, 1.1);
-	var car2 = new Car(-133, 240, 50, 35, 1.1);
-	var car3 = new Car(-267, 240, 50, 35, 1.1);
-
-	//Lane Two
-	var car4 = new Car(50, 180, 50, 35, 0.75);
-	var car5 = new Car(-150, 180, 50, 35, 0.75);
-
-	//Lane Three
-	var car6 = new Car(0, 120, 50, 35, 1.0);
-	var car7 = new Car(-170, 120, 65, 35, 1.0);
-	var car8 = new Car(-300, 120, 40, 35, 1.0);
-
-	//Lane Four
-	var car9 = new Car(0, 60, 60, 35, 1.5);
-	var car10 = new Car(-150, 60, 85, 35, 1.5);
-
-
-
+	cars.push(new Car(0, 240, 50, 35, 1.1)
+		, new Car(-133, 240, 50, 35, 1.1)
+		, new Car(-267, 240, 50, 35, 1.1) 
+		, new Car(50, 180, 50, 35, 0.75)
+		, new Car(-150, 180, 50, 35, 0.75)
+		, new Car(0, 120, 50, 35, 1.0)
+		, new Car(-170, 120, 65, 35, 1.0)
+		, new Car(-300, 120, 40, 35, 1.0)
+		, new Car(0, 60, 60, 35, 1.5)
+		, new Car(-150, 60, 85, 35, 1.5))
+	// console.log(cars);
 
 	//draw
 	function draw() {
 		//background here bc draw function continually executes code until stopped. need background redrawn each time car is redrawn
 		background(82, 222, 240);
 	
-		
-		//call display function to show each car
-		car1.display(); 
-		car2.display();
-		car3.display();
-		car4.display(); 
-		car5.display();
-		car6.display();
-		car7.display();
-		car8.display();
-		car9.display();
-		car10.display();
-
 		//call display to show froggy
 		froggy.display(); 
-		//call collision detection bt froggy and car1
-		car1.collide(); 
+
+		//call display function to show each car
+		for(var i=0; i<10; i++){
+			cars[i].display();
+			cars[i].collide();
+		};
+
 		//call wins to log when froggy lives
 		wins();
-
-		// if (){ //if carOne collide with frog
-		// 	console.log('dead frog!')
-		// 	noLoop(); 
-		// }
 	};
 
 
@@ -141,14 +112,5 @@
 			froggy.x += 20;
 		}
 	};
-
-		
-		// var checkCollision = function(){
-		// 	if ((froggy.xPosFrog + 10)-(xPosition + 25) < (10+25)){
-		// 	console.log("collision!");
-		// 	};
-		// };
-		// checkCollision();
-
 
 	
