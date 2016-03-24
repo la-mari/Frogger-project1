@@ -3,12 +3,13 @@
 	var canvasX = 400;
 	var canvasY = 400;
 	var froggyX = 200;
-	var froggyY = 375;
+	var froggyY = 315;
 	var lives = 3;
 
 	function setup() {
 		var myCanvas = createCanvas(canvasX, canvasY);
 		rectMode(CENTER);
+		$('canvas').attr('id', 'canvasStyling');
 	};
 
 	//constructor function for frog
@@ -73,19 +74,23 @@
 			// console.log('collision equation works');
 			noLoop();
 			textSize(25);
-			fill(0, 128, 0);
-			text('You Win! Froggy Lives!', 70, 25);
+			fill(250, 0, 0);
+			text('Froggy Died!' , 120, 25);
 			lives -= 1;
 		if (lives === 0){
 			textSize(50);
 			fill(255, 26, 26);
 			text('Game Over', 70, 320);
-			lives === 3;
-		}
-
+			lives = 3;
+		};
+		
+		$('p').text(lives);//how do we show 3 lives remaining initially?
+		
 		};
 	};
 
+
+	
 
 	//Win scenario
 	var wins = function(){

@@ -1,33 +1,72 @@
-#title {
-	text-indent: 229px;
-	color: #2196F3;
-	font-size: 20px;
-	position: relative;
-/*	left: 50px;*/
-	margin-left: auto;
-	margin-right: auto;
-
-
+body {
+	background-color: #ffeb3b
 }
 
-#points {
-	color:#0066ff;
-  	position: relative;
-  	top: 350px;
-  	left: 370px;
-  	background: lightblue;
-  	width: 80px;
-  	height: 80px;
+#title {
+	text-indent: 229px;
+	color: #47bf4c;
+	font-size: 32px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: -20px;
+}
+
+#lives {
+  color:#47bf4c;
+  position: relative;
+  top: 378px;
+  left: 368px;
+  border-radius: 10px;
+  background: yellow;
+  width: 78px;
+  height: 49px;
+  font-size: 18px;
+  text-align: center;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+}
+
+#livesRemaining {
+  position: relative;
+  left: 407px;
+  top: 332px;
+  color:#47bf4c;
 }
 
 .buttonDesign {
-  color:#0066ff;
+  color:#47bf4c;
   position: relative;
-  top: -20px;
-  left: 70px;
-
-
-/*  position: absolute;*/
-
+  top: -39px;
+  left: 99px;
+  border-radius: 20px;
+  background-color: yellow;
+  width: 72px;
+  height: 33px;
+  font-size: 14px;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
 }
 
+#canvasStyling {
+	border: solid;
+    border-width: 8px;
+    margin-top: -66px;
+    margin-left: -44px;
+};
+
+@media screen and (max-width: 600px) {
+	#canvasStyling{
+		width: 94%;
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.buttonDesign{
+		width: 20%;
+		margin-top: -50px;
+	}
+}
