@@ -1,5 +1,5 @@
 #title {
-	text-indent: 170px;
+	text-indent: 229px;
 	color: #2196F3;
 	font-size: 20px;
 	position: relative;
@@ -8,6 +8,16 @@
 	margin-right: auto;
 
 
+}
+
+#points {
+	color:#0066ff;
+  	position: relative;
+  	top: 350px;
+  	left: 370px;
+  	background: lightblue;
+  	width: 80px;
+  	height: 80px;
 }
 
 .buttonDesign {
