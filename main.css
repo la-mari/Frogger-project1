@@ -2,5 +2,22 @@
 	text-indent: 170px;
 	color: #2196F3;
 	font-size: 20px;
+	position: relative;
+/*	left: 50px;*/
+	margin-left: auto;
+	margin-right: auto;
+
 
 }
+
+.buttonDesign {
+  color:#0066ff;
+  position: relative;
+  top: -20px;
+  left: 70px;
+
+
+/*  position: absolute;*/
+
+}
+
