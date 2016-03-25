@@ -89,6 +89,9 @@
 		};
 	};
 
+
+	
+
 	//Win scenario
 	var wins = function(){
 		if (froggy.y <= 0){
@@ -140,6 +143,7 @@
 		//call wins to log when froggy lives
 		wins();
 	};
+
 
 	function keyPressed(){
 		if (keyCode === UP_ARROW){

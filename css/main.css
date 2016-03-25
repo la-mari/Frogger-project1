@@ -1,7 +1,5 @@
 body {
-/*	background-color: #ffeb3b*/
-background-image: url('');
-width: 450px;
+	background-color: #ffeb3b
 }
 
 #title {
@@ -57,7 +55,7 @@ width: 450px;
     border-width: 8px;
     margin-top: -66px;
     margin-left: -3px;
-}
+};
 
 @media screen and (max-width: 600px) {
 	#canvasStyling{
