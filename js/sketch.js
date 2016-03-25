@@ -58,7 +58,6 @@
 		fill(255, 255, 51);
 		ellipse(this.x + this.width/2, this.y-6, 4, 6);
 		ellipse(this.x + this.width/2, this.y+6, 4, 6);
-
 		//collision
 		if (this.x - (this.width/2)> canvasX){
 			// console.log('se paso!');
@@ -67,6 +66,10 @@
 			this.x += this.speed;
 		};
 	};
+
+	var song = document.querySelector('audio');
+	song.loop = true;
+	song.play();
 
 	//Lose scenario
 	Car.prototype.collide = function(){
@@ -77,6 +80,7 @@
 			fill(250, 0, 0);
 			text('Froggy Died!' , 120, 25);
 			lives -= 1;
+			song.pause();
 		if (lives === 0){
 			textSize(50);
 			fill(255, 26, 26);
@@ -89,12 +93,9 @@
 		};
 	};
 
-
-	
-
 	//Win scenario
 	var wins = function(){
-		if (froggy.y <= 0){
+		if (froggy.y <= 20){
 		// console.log('You Win, Froggy Lives!');
 		noLoop();
 		textSize(25);
@@ -121,7 +122,6 @@
 	function draw() {
 		//background here bc draw function continually executes code until stopped. need background redrawn each time car is redrawn
 		background(82, 222, 240);
-
 		//street
 		fill(150,150,150);
 		rect(200, 150, canvasX, 230);
@@ -129,21 +129,17 @@
 		fill(255, 255, 51);
 		rect(200, 153, canvasX, 3);
 		rect(200, 147, canvasX, 3);
-	
 		//call display to show froggy
 		froggy.display(); 
-
 		//call display function to show each car
 		for(var i=0; i<10; i++){
 			cars[i].display();
 			//calling collision function for all cars
 			cars[i].collide();
 		};
-
 		//call wins to log when froggy lives
 		wins();
 	};
-
 
 	function keyPressed(){
 		if (keyCode === UP_ARROW){
@@ -168,6 +164,8 @@
 	froggy.x = froggyX;
 	froggy.y = froggyY;	
 	loop();
+	song.play();
+	song.loop = true;
 	});
 
 	

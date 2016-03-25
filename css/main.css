@@ -29,10 +29,8 @@ body {
 }
 
 #livesRemaining {
-  position: relative;
-  left: 407px;
-  top: 332px;
   color:#47bf4c;
+  margin-top: 9px;
 }
 
 .buttonDesign {
@@ -53,9 +51,9 @@ body {
 #canvasStyling {
 	border: solid;
     border-width: 8px;
-    margin-top: -66px;
+    margin-top: -20px;
     margin-left: -3px;
-};
+}
 
 @media screen and (max-width: 600px) {
 	#canvasStyling{
@@ -68,13 +66,22 @@ body {
 	.buttonDesign{
 		width: 20%;
 		margin-top: -50px;
-		margin-left: 162px;
+		margin-left: -84px;
 	}
 }
 
 @media screen and (max-width: 600px) {
 	#title{
+    width: 20%;
 		margin-top: 7px;
 		margin-left: -96px;
 	}
+}
+
+@media screen and (max-width: 600px) {
+  #lives{
+    width: 20%;
+    margin-top: -5px;
+    margin-left: -336px;
+  }
 }
