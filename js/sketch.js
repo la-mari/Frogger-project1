@@ -99,6 +99,7 @@
 		$('p').text(lives);
 		// console.log('You Win, Froggy Lives!');
 		noLoop();
+		song.pause();
 		textSize(25);
 		fill(0, 128, 0);
 		text('You Win! Froggy Lives!', 70, 25);
