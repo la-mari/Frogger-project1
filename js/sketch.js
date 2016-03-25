@@ -5,6 +5,7 @@
 	var froggyX = 200;
 	var froggyY = 315;
 	var lives = 3;
+	var cars = [];
 
 	function setup() {
 		var myCanvas = createCanvas(canvasX, canvasY);
@@ -87,15 +88,15 @@
 			text('Game Over', 70, 320);
 			lives = 3;
 		};
-		
-		$('p').text(lives);//how do we show 3 lives remaining initially?
-		
+		$('p').text(lives);
 		};
 	};
 
 	//Win scenario
 	var wins = function(){
 		if (froggy.y <= 20){
+		lives=3;
+		$('p').text(lives);
 		// console.log('You Win, Froggy Lives!');
 		noLoop();
 		textSize(25);
@@ -103,8 +104,6 @@
 		text('You Win! Froggy Lives!', 70, 25);
 		};
 	};
-
-	var cars = [];
 	
 	cars.push(new Car(0, 240, 50, 35, 1.1),
 		new Car(-133, 240, 50, 35, 1.1),
