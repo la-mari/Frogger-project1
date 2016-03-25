@@ -59,7 +59,7 @@
 		fill(255, 255, 51);
 		ellipse(this.x + this.width/2, this.y-6, 4, 6);
 		ellipse(this.x + this.width/2, this.y+6, 4, 6);
-		//collision
+		//when car reaches end
 		if (this.x - (this.width/2)> canvasX){
 			// console.log('se paso!');
 			this.x = (this.width/2);
