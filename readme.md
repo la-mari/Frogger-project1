@@ -26,3 +26,6 @@ The frog is allows to move back and forth and from side to side across the lanes
 	<li>Change sound for game over</li>
 	<li>Add a time limit to the game</li>
 </ul>
+
+**Screenshot**
+![Game Screenshot](http://i.imgur.com/JuXpF2E.png "Frogger App Screenshot")
