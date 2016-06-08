@@ -20,7 +20,7 @@ The frog is allows to move back and forth and from side to side across the lanes
 	<li>p5.js</li>
 </ul>
 
-**Feature Features:**
+**Future Features:**
 <ul>
 	<li>Add additional levels to the game</li>
 	<li>Change sound for game over</li>
