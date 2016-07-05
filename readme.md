@@ -1,6 +1,6 @@
 #Frogger
 ## Project 1
-<http://la-mari.github.io/game1/>
+<http://la-mari.github.io/Frogger-project1/>
 
 ![Game Screenshot](http://i.imgur.com/JuXpF2E.png "Frogger App Screenshot")
 
